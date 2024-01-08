@@ -1,0 +1,107 @@
+/* CSS vars setup: */
+:root {
+    --setupLineSegmentAngleMouseMove-RightEyeMorty: #rightEyeMorty, MOUSE_CURSOR;
+    --setupLineSegmentAngleMouseMove-LeftEyeMorty: #leftEyeMorty, MOUSE_CURSOR;
+    --setupLineSegmentAngleMouseMove-RightEyeRick: #rightEyeRick, MOUSE_CURSOR;
+    --setupLineSegmentAngleMouseMove-LeftEyeRick: #leftEyeRick, MOUSE_CURSOR;
+    --setupLineSegmentAngleMouseMove-BigGear: #bigGear, MOUSE_CURSOR;
+    --setupLineSegmentAngleMouseMove-SmallGear: #smallGear, MOUSE_CURSOR;
+    --setupLineSegmentAngleMouseMove-ClockHour: #clock-hour, MOUSE_CURSOR;
+    --setupLineSegmentAngleMouseMove-ClockMinute: #clock-minute, MOUSE_CURSOR;
+}
+/* CSS reset specific to my environment: */
+img {
+    position: initial !important;
+    color: initial !important;
+    top: initial !important;
+    left: initial !important;
+    right: initial !important;
+    bottom: initial !important;
+    width: initial !important;
+    height: initial !important;
+    max-width: initial !important;
+    max-height: initial !important;
+}
+main {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+body {
+    background-color: lightblue;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+/* CSS vars usage (below also): */
+#rightEyeMorty {
+    left:-132px !important;
+    top:340px !important;
+    transform: rotate(calc(90deg + var(--lineSegmentAngleMouseMove-RightEyeMorty)));
+}
+#leftEyeMorty {
+    left:-44px !important;
+    top:325px !important;
+    transform: rotate(calc(90deg + var(--lineSegmentAngleMouseMove-LeftEyeMorty)));
+}
+#rightEyeRick {
+    left:74px !important;
+    top:137px !important;
+    transform: rotate(calc(90deg + var(--lineSegmentAngleMouseMove-RightEyeRick)));
+}
+#leftEyeRick {
+    left:167px !important;
+    top:135px !important;
+    transform: rotate(calc(90deg + var(--lineSegmentAngleMouseMove-LeftEyeRick)));
+}
+#anchor {
+    filter: hue-rotate(var(--lineSegmentAngleMouseMove-BigGear));
+    width: 568px !important;
+    height: 546px !important;
+}
+/* Layout styles: */
+.container {
+    display: grid;
+    justify-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+#eyes {
+    position: absolute !important;
+}
+#eyes img {
+    position: absolute !important;
+    width: 40px !important;
+    height: 40px !important;
+}
+#bigGear {
+    width: 100px !important;
+    height: 100px !important;
+    aspect-ratio: 1 !important;
+    position: absolute !important;
+    bottom: 100px !important;
+    left: 20px !important;
+    transform: rotate(calc(90deg + var(--lineSegmentAngleMouseMove-BigGear)));
+}
+#smallGear {
+    width: 50px !important;
+    height: 50px !important;
+    aspect-ratio: 1 !important;
+    position: absolute !important;
+    bottom: 173px !important;
+    left: 93px !important;
+    transform: rotate(calc(-2 * (90deg + var(--lineSegmentAngleMouseMove-SmallGear))));
+}
+#clock-bg, #clock-hour, #clock-minute {
+    width: 128px !important;
+    height: 128px !important;
+    aspect-ratio: 1 !important;
+    position: absolute !important;
+    bottom: 100px !important;
+    right: 20px !important;
+}
+#clock-hour {
+    transform: rotate(calc(130deg + var(--lineSegmentAngleMouseMove-ClockHour)));
+}
+#clock-minute {
+    transform: rotate(calc(12 * (130deg + var(--lineSegmentAngleMouseMove-ClockMinute))));
+}
